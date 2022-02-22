@@ -54,7 +54,7 @@ Once the configuraiton is saved, simply reload the configuration (generic IP cam
 The picture glance card is quite flexible and it's possible to add the additional camera entities to this card as well, like the motion, light and siren switches (for devices with those features) and the stream switch.  With this setup it's possible to see at a glance if any motion/ding event is active, see the latest snapshot from that event, see the light/siren/stream state, and a simple click opens the live stream.
 
 ### Event Stream
-** Please note that use of this feature requires a Ring Protect plan that support video saving **
+** Please note that use of this feature requires a Ring Protect plan that supports video storage **
 
 As mentioned above, this addon provides two separate paths for video streams, one that always provides a live stream, and a second that can stream a selected, previously recorded stream.  Camera setup for this feature is the same as above, but uses the "<camera_id>_event" path vs the live path in the previous example.
 
