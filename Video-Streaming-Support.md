@@ -15,7 +15,7 @@ To start a stream all that is required is to use any media client that support t
 
 The "live" path always starts a live view stream for the camera, while the "event" path starts a stream of a previously recorded event.  By default the event stream plays the most recently recorded motion event, however you can use the event select feature to select any for the 5 most recent motion, ding (doorbells only), or on-demand recording events.  For more details see the event stream section below.
 
-### Quick live stream configuration with Home Assistant
+### Live stream configuration with Home Assistant
 Due to the fact that MQTT is not a technology suitable for streaming, the MQTT camera support in Home Assistant only supports still images updated at most every 10 seconds and it is not currently possible to have Home Assistant automatically discover the video streaming cameras via the MQTT integration.  Because of this, the video streaming cameras will need to be configured manually in configuration.yaml.  Home Assistant provides a significant number of camera platforms that can work with RTSP streams, but this document will focus on the setup of the [Generic IP Camera](https://www.home-assistant.io/integrations/generic/) integration.
 
 To setup the generic IP camera you will need to manually add entries to the Home Assistant configuration.yaml file.  How to do this is outside of the scope of this document so please read up on that if you are not familiar with editing the Home Assistant configuration files.
