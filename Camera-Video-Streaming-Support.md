@@ -1,4 +1,3 @@
-## Camera Video Streaming
 While ring-mqtt is primarily designed to integrate Ring devices into home automation platforms via MQTT to allow driving automations from those devices, there was high demand to provide video streaming integration as well, especially for Home Assistant users, but also to provide features like on-demand recording.  With the release of version 4.8.0 it is now possible to view videos streams from any RTSP compatible client as well as trigger a recording event on a camera based on an automation using MQTT.
 
 This document provides detailed information about the video streaming support, including how to configure it with Home Assistant or use it with other medial players, as well as some troubleshooting information and known limitations.  If you would like to use the videos streaming features, please read this section carefully.
