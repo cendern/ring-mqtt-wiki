@@ -1,1 +1,0 @@
-[MQTT Topics](https://github.com/tsightler/ring-mqtt/wiki/Topics)
