@@ -1,1 +1,0 @@
-https://github.com/tsightler/ring-mqtt/wiki[Installation](https://github.com/tsightler/ring-mqtt/wiki)
