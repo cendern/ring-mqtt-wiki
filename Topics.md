@@ -12,9 +12,9 @@ The script monitors hub based devices (alarm and smart lighting) via the websock
 ring/<location_id>/<product_category>/<device_id>/status
 ```
 
-Each device also inlcudes an "info" sensor where the state topic includes various supplemental data for the device in JSON format.  This information varies by devies and includes data such as battery level, tamper status, communicaton state, volume, wifi signal strength, and other device specific data.
+Each device also inlcudes an "info" sensor where the state topic includes various supplemental data for the device in JSON format.  This available information varies by device type and includes data such as battery level, tamper status, communication state, volume, wifi signal strength, and other device specific data.  Recent version also include separate attribute sensors for battery, tamper and wifi status.
 
-For the individual device capabilities the state and command topics are simple text strings (not JSON), which use the default values for the equivalent Home Assistant device integration.  Some sensors may have multiple attribues, such as a multi-level-switch as both on/off and brightness, so they will have a standard state/command topic and an additional topic in the format of <attribute>_state and <attribute>_topic.  Below is a listing of all currently supported devices and topics.
+For the individual device capabilities the state and command messages are simple text based values (not JSON), which use the default values for the equivalent Home Assistant device integration.  Some sensors may have multiple attributes, such as a multi-level-switch with both on/off and brightness, so they will have a standard state/command topic and an additional topic in the format of <attribute>_state and <attribute>_topic.  Below is a listing of all currently supported devices and topics.
 
 ## Device Topics
 ### Alarm Control Panel (virtual device):
@@ -23,9 +23,9 @@ ring/<location_id>/alarm/<device_id>/alarm/state     <-- Alarm arming state
                                                          - disarmed
                                                          - armed_home
                                                          - armed_away
-                                                         - arming  (Exit delay)
+                                                         - arming (Exit delay)
                                                          - pending (Entry delay)
-                                                         - triggered (device is in alarm state
+                                                         - triggered (device is in alarm state)
                                                            Specific alarm type (fire/police) can be determined from panic switches (if enabled)
                                                            or from alarmState attribute in Info sensor
 ring/<location_id>/alarm/<device_id>/alarm/command   <-- Set alarm mode (disarm/arm_home/arm_away)
@@ -196,7 +196,7 @@ ring/<location_id>/camera/<device_id>/ding/state                <-- ON = Doorbel
 ring/<location_id>/camera/<device_id>/ding/attributes           <-- Last ding time
 ring/<location_id>/camera/<device_id>/motion/state              <-- ON = Motion Detected
 ring/<location_id>/camera/<device_id>/motion/attributes         <-- Last motion time, 
-                                                                    person detect, motion detect enabled
+                                                                    person/motion detection enabled
 ring/<location_id>/camera/<device_id>/light/state               <-- Get Light ON/OFF
 ring/<location_id>/camera/<device_id>/light/command             <-- Set Light ON/OFF
 ring/<location_id>/camera/<device_id>/siren/state               <-- Get Siren ON/OFF
