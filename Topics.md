@@ -17,7 +17,7 @@ Each device also inlcudes an "info" sensor where the state topic includes variou
 For the individual device capabilities the state and command messages are simple text based values (not JSON), which use the default values for the equivalent Home Assistant device integration.  Some sensors may have multiple attributes, such as a multi-level-switch with both on/off and brightness, so they will have a standard state/command topic and an additional topic in the format of <attribute>_state and <attribute>_topic.  Below is a listing of all currently supported devices and topics.
 
 ## Device Topics
-### Alarm Control Panel (virtual device):
+### Alarm Control Panel (virtual device)
 ```
 ring/<location_id>/alarm/<device_id>/alarm/state     <-- Alarm arming state
                                                          - disarmed
@@ -41,7 +41,7 @@ ring/<location_id>/alarm/<device_id>/fire/command    <-- Set Fire Panic ON/OFF
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-### Alarm Base Station:
+### Alarm Base Station
 ```
 ring/<location_id>/alarm/<device_id>/volume/state    <-- Get Volume (0-100)
 ring/<location_id>/alarm/<device_id>/volume/command  <-- Set Volume (0-100)
@@ -49,77 +49,77 @@ ring/<location_id>/alarm/<device_id>/volume/command  <-- Set Volume (0-100)
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-### Ring Keypad:
+### Ring Keypad
 ```
 ring/<location_id>/alarm/<device_id>/volume/state    <-- Get Volume (0-100)
 ring/<location_id>/alarm/<device_id>/volume/command  <-- Set Volume (0-100)
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-### Motion Sensor:
+### Motion Sensor
 ```
 ring/<location_id>/alarm/<device_id>/motion/state     <-- ON = Motion Detected
 ring/<location_id>/alarm/<device_id>/info/state       <-- Device info sensor
 ```
 
-### Contact Sensor:
+### Contact Sensor
 ```
 ring/<location_id>/alarm/<device_id>/contact/state    <-- ON = Contact Open
 ring/<location_id>/alarm/<device_id>/info/state       <-- Device info sensor
 ```
 
-### Retrofit Zone:
+### Retrofit Zone
 ```
 ring/<location_id>/alarm/<device_id>/zone/state      <-- ON = Zone Tripped
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
 ```
-### Tilt Sensor:
+### Tilt Sensor
 ring/<location_id>/alarm/<device_id>/zone/state      <-- ON = Tilt Detected
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
 ```
-### Temperature Sensor:
+### Temperature Sensor
 ring/<location_id>/alarm/<device_id>/temperature/state  <-- Temperature in celcius
 ring/<location_id>/alarm/<device_id>/info/state         <-- Device info sensor
 ```
 
-### Smoke Detector/Alarm:
+### Smoke Detector/Alarm
 ```
 ring/<location_id>/alarm/<device_id>/smoke/state     <-- ON = Smoke Detected
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-### CO Detector/Alarm:
+### CO Detector/Alarm
 ```
 ring/<location_id>/alarm/<device_id>/co/state        <-- ON = CO Detected
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-### Ring Smoke/CO Listener:
+### Ring Smoke/CO Listener
 ```
 ring/<location_id>/alarm/<device_id>/smoke/state     <-- ON = Smoke Detected
 ring/<location_id>/alarm/<device_id>/co/state        <-- ON = CO Detected
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-### Ring Flood/Freeze Sensor:
+### Ring Flood/Freeze Sensor
 ```
 ring/<location_id>/alarm/<device_id>/flood/state     <-- ON = Flood Detected
 ring/<location_id>/alarm/<device_id>/freeze/state    <-- ON = Freeze Detected
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-### Switch:
+### Switch
 ```
 ring/<location_id>/alarm/<device_id>/switch/state    <-- Get ON/OFF state
 ring/<location_id>/alarm/<device_id>/switch/command  <-- Set ON/OF state
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-### Dimmer Switch:
+### Dimmer Switch
 ```
 ring/<location_id>/alarm/<device_id>/light/state               <-- Get ON/OFF state
 ring/<location_id>/alarm/<device_id>/light/command             <-- Set ON/OF state
@@ -127,7 +127,7 @@ ring/<location_id>/alarm/<device_id>/light/brightness_state    <-- Get brightnes
 ring/<location_id>/alarm/<device_id>/light/brightness_command  <-- Set brightness state (0-100)
 ```
 
-### Fan Switch:
+### Fan Switch
 ```
 ring/<location_id>/alarm/<device_id>/fan/state                 <-- Get ON/OFF state
 ring/<location_id>/alarm/<device_id>/fan/command               <-- Set ON/OF state
@@ -144,20 +144,20 @@ ring/<location_id>/alarm/<device_id>/fan/percent_speed_command <-- Set fan speed
 ring/<location_id>/alarm/<device_id>/info/state                <-- Device info sensor
 ```
 
-### Locks:
+### Locks
 ```
 ring/<location_id>/alarm/<device_id>/lock/state      <-- Get LOCKED/UNLOCKED state
 ring/<location_id>/alarm/<device_id>/lock/command    <-- Set LOCK/UNLOCK state
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-### Siren:
+### Siren
 ```
 ring/<location_id>/alarm/<device_id>/siren/state     <-- ON = Siren Activated
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-### Thermostat:
+### Thermostat
 ```
 ring/<location_id>/alarm/<device_id>/thermostat/mode_state               <-- Current operating mode
                                                                              - off
@@ -190,7 +190,7 @@ ring/<location_id>/alarm/<device_id>/thermostat/aux_command              <-- Set
 ring/<location_id>/alarm/<device_id>/info/state                          <-- Device info sensor
 ```
 
-### Cameras (available topics vary based by device capabilities):
+### Cameras (available topics vary based on device capabilities)
 ```
 ring/<location_id>/camera/<device_id>/ding/state                <-- ON = Doorbell Ding Detected
 ring/<location_id>/camera/<device_id>/ding/attributes           <-- Last ding time
@@ -233,7 +233,7 @@ ring/<location_id>/camera/<device_id>/event_select/command      <-- Set selected
 ```
 
 ```
-### Chime (available topics vary based by device capabilities):
+### Chime (available topics vary based on device capabilities)
 ring/<location_id>/chime/<device_id>/volume/state              <-- Get Volume (0-11)
 ring/<location_id>/chime/<device_id>/volume/command            <-- Set Volume (0-11)
 ring/<location_id>/chime/<device_id>/snooze/state              <-- Get snooze state
@@ -248,7 +248,7 @@ ring/<location_id>/chime/<device_id>/play_motion_sound/command <-- Set ON = Play
 ring/<location_id>/chime/<device_id>/info/state                <-- Device info sensor
 ```
 
-### Ring Smart Lighting (available topics vary by device capabilities)
+### Ring Smart Lighting (available topics vary on device capabilities)
 ```
 ring/<location_id>/lighting/<device_id>/motion/state              <-- ON = Motion Detected
 ring/<location_id>/lighting/<device_id>/light/state               <-- Get Light ON/OFF
