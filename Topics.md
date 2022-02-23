@@ -1,3 +1,4 @@
+##Overview
 With this 4.x release topic levels have been refactored for consistency using the following general format
 ```
 ring/<location_id>/<ring_category>/<device_id>/<device_type>/state
@@ -15,7 +16,7 @@ Each device also inlcudes an "info" sensor where the state topic includes variou
 
 For the individual device capabilities the state and command topics are simple text strings (not JSON), which use the default values for the equivalent Home Assistant device integration.  Some sensors may have multiple attribues, such as a multi-level-switch as both on/off and brightness, so they will have a standard state/command topic and an additional topic in the format of <attribute>_state and <attribute>_topic.  Below is a listing of all currently supported devices and topics.
 
-Alarm Control Panel (virtual device):
+###Alarm Control Panel (virtual device):
 ```
 ring/<location_id>/alarm/<device_id>/alarm/state     <-- Alarm arming state
                                                          - disarmed
@@ -39,7 +40,7 @@ ring/<location_id>/alarm/<device_id>/fire/command    <-- Set Fire Panic ON/OFF
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-Alarm Base Station:
+###Alarm Base Station:
 ```
 ring/<location_id>/alarm/<device_id>/volume/state    <-- Get Volume (0-100)
 ring/<location_id>/alarm/<device_id>/volume/command  <-- Set Volume (0-100)
@@ -47,14 +48,14 @@ ring/<location_id>/alarm/<device_id>/volume/command  <-- Set Volume (0-100)
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-Ring Keypad:
+###Ring Keypad:
 ```
 ring/<location_id>/alarm/<device_id>/volume/state    <-- Get Volume (0-100)
 ring/<location_id>/alarm/<device_id>/volume/command  <-- Set Volume (0-100)
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-Motion Sensor:
+###Motion Sensor:
 ```
 ring/<location_id>/alarm/<device_id>/motion/state     <-- ON = Motion Detected
 ring/<location_id>/alarm/<device_id>/info/state       <-- Device info sensor
