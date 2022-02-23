@@ -16,7 +16,8 @@ Each device also inlcudes an "info" sensor where the state topic includes variou
 
 For the individual device capabilities the state and command topics are simple text strings (not JSON), which use the default values for the equivalent Home Assistant device integration.  Some sensors may have multiple attribues, such as a multi-level-switch as both on/off and brightness, so they will have a standard state/command topic and an additional topic in the format of <attribute>_state and <attribute>_topic.  Below is a listing of all currently supported devices and topics.
 
-## Alarm Control Panel (virtual device):
+### Device Topics
+#### Alarm Control Panel (virtual device):
 ```
 ring/<location_id>/alarm/<device_id>/alarm/state     <-- Alarm arming state
                                                          - disarmed
