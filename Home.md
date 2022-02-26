@@ -12,7 +12,7 @@ Docker is the recommended installation method.  While it's completely possible t
 
 [Docker Install](docs/DOCKER.md)
 
-[Standard Install](docs/STANDARD.md)
+[Standard/Manual Install - DEPRECATED](docs/STANDARD.md)
 
 ### Camera video stream configuration
 Please read the detailed [camera documentation](docs/CAMERAS.md) for more information on video streaming configuration.
