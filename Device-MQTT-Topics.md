@@ -7,12 +7,12 @@ ring/<location_id>/<ring_category>/<device_id>/<device_type>/command
 
 The <ring_category> is either "alarm", "smart_lighting", "camera", or "chime" based on the type of device.  Cameras are doorbells, stickup, spotlight or floodlight cams.  Alarm devices are any devices connected via the Alarm base station and smart_lighting is any device connected via the smart lighting bridge.
 
-The script monitors hub based devices (alarm and smart lighting) via the websocket connection and uses the automatic 20 status second polling to keep a heartbeat for polled devices (cameras and chimes), automatically updating the online/offline state of the devices based on this connectivity information.  As this is device level connectivity is published to "status" at the device_id level:
+The script monitors hub-based devices (alarm and smart lighting) via the WebSocket connection and uses the automatic 20 status second polling to keep a heartbeat for polled devices (cameras and chimes), automatically updating the online/offline state of the devices based on this connectivity information.  As this is device level connectivity is published to "status" at the device_id level:
 ```
 ring/<location_id>/<product_category>/<device_id>/status
 ```
 
-Each device also inlcudes an "info" sensor where the state topic includes various supplemental data for the device in JSON format.  This available information varies by device type and includes data such as battery level, tamper status, communication state, volume, wifi signal strength, and other device specific data.  Recent version also include separate attribute sensors for battery, tamper and wifi status.
+Each device also includes an "info" sensor where the state topic includes various supplemental data for the device in JSON format.  This available information varies by device type and includes data such as battery level, tamper status, communication state, volume, Wi-Fi signal strength, and other device specific data.  Recent versions also include separate attribute sensors for battery, tamper and Wi-Fi___33 status.
 
 For the individual device capabilities the state and command messages are simple text based values (not JSON), which use the default values for the equivalent Home Assistant device integration.  Some sensors may have multiple attributes, such as a multi-level-switch with both on/off and brightness, so they will have a standard state/command topic and an additional topic in the format of <attribute>_state and <attribute>_topic.  Below is a listing of all currently supported devices and topics.
 
@@ -34,7 +34,7 @@ ring/<location_id>/alarm/<device_id>/bypass/command  <-- Set arming bypass mode 
                                                          automatically bypass any faulted contact sensors)
 ring/<location_id>/alarm/<device_id>/siren/state     <-- Get Siren ON/OFF
 ring/<location_id>/alarm/<device_id>/siren/command   <-- Set Siren ON/OFF
-ring/<location_id>/alarm/<device_id>/police/state    <-- Get Polich Panic ON/OFF
+ring/<location_id>/alarm/<device_id>/police/state    <-- Get Police Panic ON/OFF
 ring/<location_id>/alarm/<device_id>/police/command  <-- Set Police Panic ON/OFF
 ring/<location_id>/alarm/<device_id>/fire/state      <-- Get Fire Panic ON/OFF
 ring/<location_id>/alarm/<device_id>/fire/command    <-- Set Fire Panic ON/OFF
@@ -74,15 +74,15 @@ ring/<location_id>/alarm/<device_id>/zone/state      <-- ON = Zone Tripped
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-```
 ### Tilt Sensor
+```
 ring/<location_id>/alarm/<device_id>/zone/state      <-- ON = Tilt Detected
 ring/<location_id>/alarm/<device_id>/info/state      <-- Device info sensor
 ```
 
-```
 ### Temperature Sensor
-ring/<location_id>/alarm/<device_id>/temperature/state  <-- Temperature in celcius
+```
+ring/<location_id>/alarm/<device_id>/temperature/state  <-- Temperature in Celsius
 ring/<location_id>/alarm/<device_id>/info/state         <-- Device info sensor
 ```
 
@@ -171,12 +171,12 @@ ring/<location_id>/alarm/<device_id>/thermostat/action_state             <-- Cur
                                                                              - cooling
                                                                              - heating
                                                                              - fan
-ring/<location_id>/alarm/<device_id>/thermostat/temerature_state         <-- Current target temperature °C (heat/cool mode)
-ring/<location_id>/alarm/<device_id>/thermostat/temerature_command       <-- Set target temperature °C (heat/cool mode)
-ring/<location_id>/alarm/<device_id>/thermostat/temerature_low_state     <-- Current range low temperature °C (auto mode)
-ring/<location_id>/alarm/<device_id>/thermostat/temerature_low_command   <-- Set range low temperature °C (auto mode)
-ring/<location_id>/alarm/<device_id>/thermostat/temerature_high_state    <-- Current range high temperature °C (auto mode)
-ring/<location_id>/alarm/<device_id>/thermostat/temerature_high_command  <-- Set range high temperature °C (auto mode)
+ring/<location_id>/alarm/<device_id>/thermostat/temperature_state         <-- Current target temperature °C (heat/cool mode)
+ring/<location_id>/alarm/<device_id>/thermostat/temperature_command       <-- Set target temperature °C (heat/cool mode)
+ring/<location_id>/alarm/<device_id>/thermostat/temperature_low_state     <-- Current range low temperature °C (auto mode)
+ring/<location_id>/alarm/<device_id>/thermostat/temperature_low_command   <-- Set range low temperature °C (auto mode)
+ring/<location_id>/alarm/<device_id>/thermostat/temperature_high_state    <-- Current range high temperature °C (auto mode)
+ring/<location_id>/alarm/<device_id>/thermostat/temperature_high_command  <-- Set range high temperature °C (auto mode)
 
 ring/<location_id>/alarm/<device_id>/thermostat/current_temerature_state <-- Current temperature °C
 ring/<location_id>/alarm/<device_id>/thermostat/fan_mode_state           <-- Current fan operating mode
@@ -190,7 +190,8 @@ ring/<location_id>/alarm/<device_id>/thermostat/aux_command              <-- Set
 ring/<location_id>/alarm/<device_id>/info/state                          <-- Device info sensor
 ```
 
-### Cameras (available topics vary based on device capabilities)
+### Cameras
+Available topics vary based on device capabilities.
 ```
 ring/<location_id>/camera/<device_id>/ding/state                <-- ON = Doorbell Ding Detected
 ring/<location_id>/camera/<device_id>/ding/attributes           <-- Last ding time
@@ -232,8 +233,10 @@ ring/<location_id>/camera/<device_id>/event_select/command      <-- Set selected
                                                                     5 = 5th most recent event
 ```
 
+### Chime
+Available topics vary based on device capabilities.
+
 ```
-### Chime (available topics vary based on device capabilities)
 ring/<location_id>/chime/<device_id>/volume/state              <-- Get Volume (0-11)
 ring/<location_id>/chime/<device_id>/volume/command            <-- Set Volume (0-11)
 ring/<location_id>/chime/<device_id>/snooze/state              <-- Get snooze state
@@ -248,7 +251,8 @@ ring/<location_id>/chime/<device_id>/play_motion_sound/command <-- Set ON = Play
 ring/<location_id>/chime/<device_id>/info/state                <-- Device info sensor
 ```
 
-### Ring Smart Lighting (available topics vary on device capabilities)
+### Ring Smart Lighting
+Available topics vary on device capabilities.
 ```
 ring/<location_id>/lighting/<device_id>/motion/state              <-- ON = Motion Detected
 ring/<location_id>/lighting/<device_id>/light/state               <-- Get Light ON/OFF
@@ -256,12 +260,12 @@ ring/<location_id>/lighting/<device_id>/light/command             <-- Set Light 
 ring/<location_id>/lighting/<device_id>/light/brightness_state    <-- Get brightness (0-100)
 ring/<location_id>/lighting/<device_id>/light/brightness_command  <-- Set brightness (0-100)
 ring/<location_id>/lighting/<device_id>/light/duration_state      <-- Get light duration (0-32767)
-ring/<location_id>/lighting/<device_id>/light/duration_command    <-- Set light duraiton (0-32757)
+ring/<location_id>/lighting/<device_id>/light/duration_command    <-- Set light duration (0-32757)
 ring/<location_id>/lighting/<device_id>/info/state                <-- Device info sensor
 ```
 
-### Modes Control Panel (virtual alarm control panel for setting Ring location modes for
-locations with Ring cameras but not Ring alarm):
+### Modes Control Panel
+Virtual alarm control panel for setting Ring location modes for locations with Ring cameras but not Ring alarm.
 ```
 ring/<location_id>/alarm/<device_id>/mode/state      <-- Get location mode: ("disarmed", "armed_home", "armed_away")
 ring/<location_id>/alarm/<device_id>/mode/command    <-- Set location mode: ("disarm", "arm_home", "arm_away")
